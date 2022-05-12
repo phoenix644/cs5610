@@ -1,2 +1,2 @@
 # cs5610
-Repo for cs5610-WebDevelopment Cource
+a Repository for cs5610-WebDevelopment Cource

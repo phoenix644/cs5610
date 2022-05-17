@@ -4,10 +4,6 @@ body {
     font-family: roboto;
 }
 
-P {
-
-
-}
 
 header { 
     text-align: center;
@@ -34,3 +30,25 @@ margin:  10px 0 10px;
 
 
 }
+
+
+  a[href*="github"]:hover {
+    color: crimson;
+    
+  }
+
+  a[href*="github"]::after {
+    content: url(GitHub-Mark-32px.png);
+    /* background-image: url(GitHub-Mark-32px.png);
+    background-repeat: no-repeat;
+    
+    width: 32px;
+    height: 320px; */
+
+    
+  }
+
+  h2::first-letter {
+
+    font-size:  2rem;
+  }

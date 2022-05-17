@@ -1,0 +1,23 @@
+
+h2 {
+    font-size: 2em;
+    color: #000;
+    font-family: Georgia, 'Times New Roman’, Times, serif;
+    }
+    #big-bright {
+    color: rebeccapurple;
+    font-size: 3em;
+    }
+    .small {
+    font-size: 1em;
+    }
+
+        .content {
+    
+           
+        display: table-cell;
+        vertical-align: middle;
+    
+          max-width: 5000px;
+          margin: auto;
+        }

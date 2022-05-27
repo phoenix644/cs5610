@@ -1,0 +1,22 @@
+{
+  "name": "cs5610-2",
+  "version": "1.0.0",
+  "description": "a Repository for cs5610-WebDevelopment Cource",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phoenix644/cs5610.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phoenix644/cs5610/issues"
+  },
+  "homepage": "https://github.com/phoenix644/cs5610#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

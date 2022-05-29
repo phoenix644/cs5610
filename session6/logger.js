@@ -1,5 +1,3 @@
-const logger = require('./logger.js');
-
 
 
 let version = 2.6

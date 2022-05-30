@@ -75,7 +75,7 @@ a:visited { color: rgb(87, 116, 43); }
 	text-align:center;
 	margin-top: 0px;
 	margin-right: 0px;
-	margin-bottom: 200px;
+	margin-bottom: 240px;
 	margin-left: 0px;
 	letter-spacing: 4px;
 }
@@ -93,6 +93,12 @@ a:visited { color: rgb(87, 116, 43); }
 	font-weight: bold;
 	color: #717070;
 }
+
+.dark{
+    background-color: #cccccc;
+    color:red
+}
+
 .tagline {
 	text-align: center;
 	color: #FFFFFF;
@@ -142,4 +148,12 @@ main .profileHeader p {
 	line-height: 1.8;
 	overflow-y: auto;
 }
+
+.toggleButton{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+
 

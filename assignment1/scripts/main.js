@@ -14,8 +14,8 @@ const handleButtonText = () => {
   );
   let isDarkMode = applicationState.isDarkMode || false;
   if (isDarkMode) {
-    let introduction = document.querySelector("#introduction");
-    introduction.classList.add("dark");
+    let maintext = document.querySelector("#maintext");
+    maintext.classList.add("dark");
   }
 
   let button = document.querySelector(".toggleButton");
@@ -33,12 +33,12 @@ const addEventHandler = () => {
 }
 
 const toggleHandler = (item) => {
-  // Toggle the Introduction
-  let introduction = document.querySelector("#introduction");
-  introduction.classList.toggle("dark");
+  // Toggle the maintext
+  let maintext = document.querySelector("#maintext");
+  maintext.classList.toggle("dark");
 
   // Update the Button name
-  let isDarkMode = introduction.classList.contains("dark");
+  let isDarkMode = maintext.classList.contains("dark");
   let button = document.querySelector(".toggleButton");
   button.innerHTML = isDarkMode ? "Light" : "Dark";
 

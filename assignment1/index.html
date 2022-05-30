@@ -9,13 +9,14 @@
     <link href="css/stylesheet.css" rel="stylesheet">
 <!--	I could not find my font in google fonts list-->
 	 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+     <script defer src="scripts/main.js"></script>
 	
 </head>
 
 <body>
     <header>
-        <button class="toggleButton"></button>
         <h1>Phoenix</h1>
+        <button class="toggleButton"></button>
     </header>
     <main>
       
@@ -28,9 +29,20 @@
 <section class="hero" id="hero">
 	  
     <h2 class="hero_header">01&nbsp; <span class="light">Phoenix</span></h2>
-    <p class="tagline">this is Phoenix,&nbsp; a personal web page</p>
+    <p class="tagline" id="maintext">this is Phoenix,&nbsp; a personal web page</p>
   </section>
 		
+  <section class="datetime">
+    <fieldset>
+        <legend>Date Time Section</legend>
+        <input type="radio" name="datetime" value="date"  id="dateradio" checked>
+        <label for="dateradio">Date</label>
+        <input type="radio" name="datetime" value="time"  id="timeradio">
+        <label for="timeradio">Time</label> 
+        <button id="datetimeButton">Add Here</button>
+    </fieldset>
+    <div id="dateTimePanel"></div>
+</section>
 		
     </main>
     <footer>

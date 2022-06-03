@@ -1,0 +1,47 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Work on assignment 2",
+      "date": "March 5th at 8 am",
+      "reminder": true
+    },
+    {
+      "text": "gfdg",
+      "date": "gdfgd",
+      "id": 4
+    },
+    {
+      "text": "fdsf",
+      "date": "fsfd",
+      "id": 5
+    },
+    {
+      "text": "gdgf",
+      "date": "ertre",
+      "id": 6
+    },
+    {
+      "text": "gfdg",
+      "date": "324324",
+      "id": 7
+    },
+    {
+      "text": "rew",
+      "date": "sv",
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Neda",
+      "task": 1
+    },
+    {
+      "id": 2,
+      "name": "Adam",
+      "task": 3
+    }
+  ]
+}

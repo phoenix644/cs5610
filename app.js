@@ -15,7 +15,7 @@ app.get('/', async (req, res) => {
   res.render('index', { notes: notes });
 });
 
-mongoose.connect("mongodb+srv://admin:Xx123456@cs5610.cus0jqi.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect(process.env.SERVER, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

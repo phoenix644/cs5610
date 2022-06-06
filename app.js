@@ -15,12 +15,12 @@ app.get('/', async (req, res) => {
   res.render('index', { notes: notes });
 });
 
-mongoose.connect(process.env.SERVER, {
+mongoose.connect("mongodb+srv://admin:Xx123456@cs5610.cus0jqi.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 app.use('/', notesRouter);
-app.listen(process.env.PORT || 8080, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server Has Started`);
 });

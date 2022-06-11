@@ -1,0 +1,31 @@
+{
+  "tasks": [
+    {
+      "title": "test",
+      "date": "today",
+      "id": 4
+    },
+    {
+      "title": "practise react",
+      "date": "01/04/2022",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Neda",
+      "task": 1
+    },
+    {
+      "id": 2,
+      "name": "Dan",
+      "task": 3
+    },
+    {
+      "id": 3,
+      "name": "Adam",
+      "task": 3
+    }
+  ]
+}

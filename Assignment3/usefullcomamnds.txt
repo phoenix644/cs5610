@@ -13,3 +13,22 @@ npm i nodemon
 
 add this to package.json : "start": "nodemon backend/server.js"
 
+npx create-react-app frontend
+
+npm install react-bootstrap 
+
+pick your theme from:
+bootswatch.com
+
+
+
+react fragment:
+
+<>
+
+</>
+
+daghighe 6:30 dide shavad video 6
+
+
+

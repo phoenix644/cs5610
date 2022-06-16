@@ -1,7 +1,7 @@
 # cs5610
 ## Iteration0
 
-this Iteration is consisting of frontend, using React DOM Router and Bootstrap and backend using nodejs, as you can see, 
+This Iteration is consisting of frontend, using React DOM Router, bootstrap and mongoDB and backend using nodejs and express as you can see, 
 and at the end, i installed axios and mongoose to create the connection to the DB, 
 but at this step i am not fetching data from DB, as currently i am getting data from note.js file. 
 

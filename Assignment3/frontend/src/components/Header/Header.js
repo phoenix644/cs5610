@@ -14,9 +14,11 @@ const Header = () => {
     <>
       <Navbar bg="dark" expand="lg" variant="dark">
         <Container fluid>
-          {/* <Navbar.Brand href="/">Jot it!</Navbar.Brand> */}
+          {/* <Navbar.Brand href="/">Jote it!</Navbar.Brand> */}
           <Navbar.Brand>
-            <Link to="/">Jot it!</Link>
+            <Link style={{ color: "white" }} to="/">
+              Jote it!
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -26,7 +28,7 @@ const Header = () => {
               navbarScroll
             >
               <Nav.Link href="/mynotes">
-                <Link to="/mynotes">My Jotes</Link>
+                <Link to="/mynotes">My notes</Link>
               </Nav.Link>
               <NavDropdown
                 title="Name of the user"

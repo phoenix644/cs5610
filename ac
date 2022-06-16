@@ -1,0 +1,144 @@
+[33mcommit be04b1fe9b272c33f73088900abf2cd6f3affdc5[m[33m ([m[1;36mHEAD -> [m[1;32mAssignment3[m[33m)[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Thu Jun 16 00:00:31 2022 -0700
+
+    last submit editing readme.
+
+[33mcommit 1ca197e196edd3078d4eeedd5f6445ee10319ae9[m[33m ([m[1;31morigin/Assignment3[m[33m)[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Wed Jun 15 23:46:20 2022 -0700
+
+    adding README and Heroku link
+
+[33mcommit 287d71be201214fcd8074eb5b33151d16f5cac44[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Wed Jun 15 23:37:07 2022 -0700
+
+    Final-Iteration1
+
+[33mcommit dc21161c4740ff0d056546cd71a2f3db24f2d39c[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Wed Jun 15 23:18:49 2022 -0700
+
+    connect to DB
+
+[33mcommit e31f0e0ef6557401a08a9f0acc774a40a2c7f173[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Wed Jun 15 21:48:19 2022 -0700
+
+    adding card and accordion
+
+[33mcommit 92f00d7ff50c4c69700537e1ab9d72e583dcfa10[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Tue Jun 14 14:16:51 2022 -0700
+
+    working on landing page
+
+[33mcommit 0cf08a437bcff983becdc14b6620ec1f4355fede[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 12 00:05:32 2022 -0700
+
+    restructure
+
+[33mcommit f98daa339d74364b0f35735afab461ef7e4947f7[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sat Jun 11 22:36:53 2022 -0700
+
+    iteration1-1
+
+[33mcommit e7c634d9ce1ba10a5e5b4ce158bcffb13857d6de[m[33m ([m[1;31morigin/session10[m[33m)[m
+Merge: aad70403 7a69a771
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sat Jun 11 16:44:05 2022 -0700
+
+    Merge branch 'main' into session10
+
+[33mcommit aad7040324b7459f9ebb29318b50f500ce7efbe6[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sat Jun 11 15:29:57 2022 -0700
+
+    session10
+
+[33mcommit 1f845bd87e5220d3faba01717cfc7b5c41ad7ecf[m[33m ([m[1;31morigin/assignment2[m[33m, [m[1;32massignment2[m[33m)[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Tue Jun 7 18:42:05 2022 -0700
+
+    ...
+
+[33mcommit 3864d004bd23864625181df6a248673a0abecab8[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Tue Jun 7 15:56:36 2022 -0700
+
+    debug
+
+[33mcommit 92290595eefcc06c334c57bc8ff1162cfac672fc[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Tue Jun 7 15:51:43 2022 -0700
+
+    add node
+
+[33mcommit d74fcbe0a4d5f3ff7e1cb607bbc3c7260dc08065[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 22:20:33 2022 -0700
+
+    .
+
+[33mcommit 97d9c12862ecf88b86f40d0ce32f7966d5b66295[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 22:18:26 2022 -0700
+
+    .
+
+[33mcommit b1a5d71ba324b5de10503b0736e9572de032d3ca[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 21:21:54 2022 -0700
+
+    final-2
+
+[33mcommit 7a69a7710a4b7cafda4836cb6d1ceca908cda82b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 21:16:09 2022 -0700
+
+    .
+
+[33mcommit 5c1d7169889e220fc81520581d11b262dfe51ca9[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 20:50:54 2022 -0700
+
+    heroku
+
+[33mcommit c50d3dc4408e67f64cefd9cfe23c5cd4fcd63b6e[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 20:40:32 2022 -0700
+
+    heroku
+
+[33mcommit 965a6b6781e3a89bb8f9b7f90dfb9a0d447cbc92[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 20:34:29 2022 -0700
+
+    final1
+
+[33mcommit fe308f0cf743f0184bcb9a8b42ce4e4c87d9dcd5[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 19:29:52 2022 -0700
+
+    final
+
+[33mcommit 6bfdae48dd6fb3ac4dcc299ac83f22966f2da054[m
+Author: ahamzehee <hamzehee.a@northeastern.edu>
+Date:   Sun Jun 5 17:41:32 2022 -0700
+
+    final
+
+[33mcommit 043ee3436f0e401b688f3e31a6c1867819993ac9[m
+Author: phoenix644 <66519343+phoenix644@users.noreply.github.com>
+Date:   Thu May 12 14:02:39 2022 -0700
+
+    Update README.md
+
+[33mcommit 9ec26392995170f4781da4f286c977b372f10404[m
+Author: phoenix644 <66519343+phoenix644@users.noreply.github.com>
+Date:   Thu May 12 14:01:59 2022 -0700
+
+    Initial commit

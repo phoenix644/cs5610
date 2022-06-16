@@ -55,8 +55,8 @@ const MyNotes = () => {
   }, []);
 
   return (
-    <MainScreen title="Here you go, Jot it down right away.">
-      <Link nk to="createnote">
+    <MainScreen title="Here you go, Jote it down right away.">
+      <Link nk to="creaWtenote">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
           Create New Note
         </Button>

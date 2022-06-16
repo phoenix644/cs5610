@@ -46,18 +46,22 @@
 
 @media only screen and (max-width: 768px) {
   .title {
-    font-size: 30px;
+    max-width: 5em;
+    font-size: 36px;
   }
   .subtitle {
-    font-size: 10px;
+    font-size: 20px;
+    max-width: 10em;
   }
   .buttonContainer {
+    margin-bottom: 40px;
     width: 120px;
     height: 30px;
     display: flex;
     margin-left: 20.5em;
     text-align: center;
     justify-content: right;
+    flex-direction: column;
   }
   .landingbutton {
     width: 90px;

@@ -9,7 +9,7 @@ const LandingPage = () => {
         <Row>
           <div className="intro-text">
             <div>
-              <h1 className="title">Welcome to Jot it. </h1>
+              <h1 className="title">Welcome to Jote it. </h1>
               <p className="subtitle">Jot it Anywhere, as fast as possible.</p>
             </div>
             <div className="buttonContainer">
@@ -27,7 +27,7 @@ const LandingPage = () => {
                   bg="dark"
                   variant="outline-dark"
                   size="lg"
-                  className="landingbutton float-right"
+                  className="landingbutton "
                 >
                   Signup
                 </Button>

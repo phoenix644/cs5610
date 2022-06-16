@@ -7,13 +7,17 @@ import {
   Navbar,
   NavDropdown,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
       <Navbar bg="dark" expand="lg" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="/">Jot it!</Navbar.Brand>
+          {/* <Navbar.Brand href="/">Jot it!</Navbar.Brand> */}
+          <Navbar.Brand>
+            <Link to="/">Jot it!</Link>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -21,7 +25,9 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action2">My Jotes</Nav.Link>
+              <Nav.Link href="/mynotes">
+                <Link to="/mynotes">My Jotes</Link>
+              </Nav.Link>
               <NavDropdown
                 title="Name of the user"
                 id="navbarScrollingDropdown"

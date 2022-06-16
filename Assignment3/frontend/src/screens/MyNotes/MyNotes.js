@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Badge, Button, Card, Accordion } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { Link } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
-import notes from "../../data/notes";
+
+import axios from "axios";
 
 function CustomToggle({ children, eventKey }) {
   const decoratedOnClick = useAccordionButton(eventKey, () =>
@@ -35,10 +36,24 @@ function CustomToggle({ children, eventKey }) {
 }
 
 const MyNotes = () => {
+  const [notes, setNotes] = useState([]);
+
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure?")) {
     }
   };
+
+  const fetchNotes = async () => {
+    const { data } = await axios.get("/api/notes");
+    setNotes(data);
+  };
+
+  console.log(notes);
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
   return (
     <MainScreen title="Here you go, Jot it down right away.">
       <Link nk to="createnote">
@@ -47,7 +62,7 @@ const MyNotes = () => {
         </Button>
       </Link>
       {notes.map((note) => (
-        <Accordion defaultActiveKey="0">
+        <Accordion key={note._id}>
           <Card style={{ margin: 10 }}>
             <Card.Header style={{ display: "flex" }}>
               {/* <span
@@ -60,7 +75,7 @@ const MyNotes = () => {
                   fontSize: 18,
                 }}
               > */}
-              <CustomToggle eventKey="0">{note.title}</CustomToggle>
+              <CustomToggle eventKey={note._id}>{note.title}</CustomToggle>
               {/* <Accordion.Item as={Card.Text} variant="link" eventKey="0">
                   {note.title}
                 </Accordion.Item> */}
@@ -76,7 +91,7 @@ const MyNotes = () => {
                 </Button>
               </div>
             </Card.Header>
-            <Accordion.Collapse eventKey="0">
+            <Accordion.Collapse eventKey={note._id}>
               <Card.Body>
                 <h4>
                   <Badge variant="success">Category- {note.category}</Badge>

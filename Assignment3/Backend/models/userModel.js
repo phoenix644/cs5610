@@ -32,10 +32,10 @@ const userSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-
-// userSchema.methods.matchPassword = async function (enteredPassword) {
-//   return await bcrypt.compare(enteredPassword, this.password);
-// };
+// this is for the login.
+userSchema.methods.matchPassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
 
 // will encrypt password everytime its saved before saving operation
 userSchema.pre("save", async function (next) {

@@ -5,6 +5,7 @@ const generateToken = require("../utils/generateToken");
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password, pic } = req.body;
 
+  // console.log(password);
   const userExists = await User.findOne({ email });
 
   if (userExists) {

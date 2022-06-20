@@ -257,18 +257,6 @@ const RegisterScreen = () => {
             />
           </Form.Group>
 
-          {/* <Form.Group controlId="pic">
-            <Form.Label>Profile Picture</Form.Label>
-            <Form.File
-              //if we select mor than one image it is going to select first selected image [0].
-              onChange={(e) => postDetails(e.target.files[0])}
-              id="custom-file"
-              type="image/png"
-              label="Upload Profile Picture"
-              custom
-            />
-          </Form.Group> */}
-
           <Button variant="primary" type="submit">
             Register
           </Button>

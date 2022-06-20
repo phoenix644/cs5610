@@ -131,6 +131,40 @@ const RegisterScreen = () => {
   //     }
   //   }, [history, userInfo]);
 
+  const postDetails = (pics) => {
+    if (
+      pics ===
+      "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+    ) {
+      return setPicMessage("Please Select an Image");
+    }
+    setPicMessage(null);
+
+    //   if image type was one of these we will create a new formdat
+    if (pics.type === "image/jpeg" || pics.type === "image/png") {
+      const data = new FormData();
+      //generic code for when we want to upload on cloudinary
+      data.append("file", pics);
+      data.append("upload_preset", "Jote-It");
+      data.append("cloud_name", "jote-it");
+      fetch("https://api.cloudinary.com/v1_1/Jote-It/image/upload", {
+        method: "post",
+        body: data,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          //after uploading cloudinary will send us back a url
+          setPic(data.url.toString());
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      return setPicMessage("Please Select an Image");
+    }
+  };
+
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -207,14 +241,31 @@ const RegisterScreen = () => {
             />
           </Form.Group>
 
+          {picMessage && (
+            <ErrorMessage variant="danger">{picMessage}</ErrorMessage>
+          )}
+
+          <Form.Group controlId="pic" className="mb-3">
+            <Form.Label>Profile Picture</Form.Label>
+            <Form.Control
+              type="file"
+              onChange={(e) => postDetails(e.target.files[0])}
+              id="custom-file"
+              label="Upload Profile Picture"
+              accept="image/jpeg"
+              custom
+            />
+          </Form.Group>
+
           {/* <Form.Group controlId="pic">
             <Form.Label>Profile Picture</Form.Label>
             <Form.File
-              //   onChange={(e) => postDetails(e.target.files[0])}
+              //if we select mor than one image it is going to select first selected image [0].
+              onChange={(e) => postDetails(e.target.files[0])}
               id="custom-file"
               type="image/png"
               label="Upload Profile Picture"
-              //   custom
+              custom
             />
           </Form.Group> */}
 

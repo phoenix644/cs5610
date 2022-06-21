@@ -1,56 +1,46 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../../actions/userActions";
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 import MainScreen from "../../components/MainScreen";
 import "./LoginScreen.css";
 
-const LoginScreen = (history) => {
+const LoginScreen = ({ navigate }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // no need anymore after adding redux
+  //   const [error, setError] = useState(false);
+  //   const [loading, setLoading] = useState(false);
 
+  //define a dispatch will use a hook
+
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
+  //we are gonna use userinfo to route to page if user is already logged in.
+  // import { Link, useNavigate } from "react-router-dom";
+  // const navigate = useNavigate();
+  // navigate("/");
+
+  navigate = useNavigate();
+  //wheneve userinfo changes it is gonna call this useeffect function.
   useEffect(() => {
-    const userInfo = localStorage.getItem("userInfo");
-    //if there is something in localstorage we will going to push to mynotes page
     if (userInfo) {
-      history.push("/mynotes");
+      //   history.push("/mynotes");
+      navigate("/mynotes");
+      //    const goToHomePage = () => navigate("/home");
     }
-  }, [history]);
+  }, [navigate, userInfo]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-
-      setLoading(true);
-      const { data } = await axios.post(
-        "/api/users/login",
-        {
-          email,
-          password,
-        },
-        config
-      );
-
-      console.log(data);
-      //store email and password in local storage after successful process
-      localStorage.setItem("userInfo", JSON.stringify(data));
-      setLoading(false);
-    } catch (error) {
-      setError(error.response.data.message);
-      //after getting error set the loading to false
-      setLoading(false);
-    }
+    //we call this login finally from useraction
+    dispatch(login(email, password));
   };
-
   return (
     <MainScreen title="Login">
       <div className="loginContainer">

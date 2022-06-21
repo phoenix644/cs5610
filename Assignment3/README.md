@@ -1,5 +1,5 @@
 # cs5610
-## Iteration0
+## Iteration1
 
 This Iteration is consisting of frontend, using React DOM Router, bootstrap and mongoDB and backend using nodejs and express as you can see, 
 and at the end, i installed axios and mongoose to create the connection to the DB, 
@@ -33,3 +33,37 @@ this page is responsive right now.
 which the notes are fetching from this path :"/api/notes" from backend .
 also you can get accesss directly using following URL: https://jote-it3.herokuapp.com/api/notes
 
+## Iteration2
+
+in the following of the last itteration i continue developing my web application by adding these features:
+* Login/Logout
+    Login page, add encryption
+    add user model.
+    adding JWTtoken to users.
+    implement logout features.
+* Register
+    -register new user.
+    
+    
+* MiddleWares 
+    -Add two middle-ware to handle errors and protecting API from unauthorized access
+    
+    
+* External WebAPI
+    -implement a functionality to store and retrieve profile photos Cloudinary website.
+    
+* Redux
+    -implementing Redux for manipulating the state in application using Redux for Login/Logout/Register features.
+    
+    
+* CRUD
+    -Implement the CRUD functionality to create update find and delete a new note(this feature has not added yet to the front end).
+   
+
+![](screenshots/loginpage.jpg)
+
+![](screenshots/register.jpg)
+
+![](screenshots/redux.jpg)
+
+![](screenshots/createuser.jpg)

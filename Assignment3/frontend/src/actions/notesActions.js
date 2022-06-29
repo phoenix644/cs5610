@@ -87,3 +87,78 @@ export const createNoteAction =
       });
     }
   };
+
+export const deleteNoteAction = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: NOTES_DELETE_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.delete(`/api/notes/${id}`, config);
+
+    dispatch({
+      type: NOTES_DELETE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({
+      type: NOTES_DELETE_FAIL,
+      payload: message,
+    });
+  }
+};
+
+//using id to find the note, then update the rest parameters.
+export const updateNoteAction =
+  (id, title, content, category) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: NOTES_UPDATE_REQUEST,
+      });
+
+      const {
+        userLogin: { userInfo },
+      } = getState();
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+
+      const { data } = await axios.put(
+        `/api/notes/${id}`,
+        { title, content, category },
+        config
+      );
+
+      dispatch({
+        type: NOTES_UPDATE_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      dispatch({
+        type: NOTES_UPDATE_FAIL,
+        payload: message,
+      });
+    }
+  };

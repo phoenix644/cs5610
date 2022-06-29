@@ -6,7 +6,7 @@ import MainScreen from "../../components/MainScreen";
 
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { listNotes } from "../../actions/notesActions";
+import { deleteNoteAction, listNotes } from "../../actions/notesActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
@@ -56,8 +56,20 @@ const MyNotes = () => {
   const { success: successCreate } = noteCreate; // whenever this fire offs it run useeffect again.
   //so we use successCreate as dependency to useeffect as well.
 
+  const noteUpdate = useSelector((state) => state.noteUpdate);
+  const { success: successUpdate } = noteUpdate;
+  //to able to refresh the mynotes after editing a notes.
+
+  const noteDelete = useSelector((state) => state.noteDelete);
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = noteDelete;
+
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure?")) {
+      dispatch(deleteNoteAction(id));
     }
   };
 
@@ -76,8 +88,16 @@ const MyNotes = () => {
     if (!userInfo) {
       navigate("/");
     }
-  }, [dispatch, successCreate, navigate, userInfo]);
+  }, [
+    dispatch,
+    successCreate,
+    navigate,
+    userInfo,
+    successUpdate,
+    successDelete,
+  ]);
   //also this useeffect is dependant on navigate and useInfo as we see if useInfo changes it going to do naviagte.
+  //(reload all of the notes on delete for example)
 
   return (
     <MainScreen title={`Here you go, Jot it down right away ${userInfo.name}`}>
@@ -88,6 +108,10 @@ const MyNotes = () => {
       </Link>
       {/* wanna put something based on our redux state on line 46 we check if it
       was loading or error we load other components */}
+      {errorDelete && (
+        <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
+      )}
+      {loadingDelete && <Loading />}
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
       {loading && <Loading />}
       {/* we use reverse to list it from newer to oldest notes. */}

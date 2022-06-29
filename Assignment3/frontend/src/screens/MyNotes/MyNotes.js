@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Badge, Button, Card, Accordion } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
 
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { listNotes } from "../../actions/notesActions";
+import Loading from "../../components/Loading";
+import ErrorMessage from "../../components/ErrorMessage";
 
 function CustomToggle({ children, eventKey }) {
   const decoratedOnClick = useAccordionButton(eventKey, () =>
@@ -39,11 +41,20 @@ function CustomToggle({ children, eventKey }) {
 
 const MyNotes = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   //useSelector Hook.
   const noteList = useSelector((state) => state.noteList);
   const { loading, notes, error } = noteList;
   // const [notes, setNotes] = useState([]);
+
+  //to get the user info to see if they were not logined move them to login screen.
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const noteCreate = useSelector((state) => state.noteCreate);
+  const { success: successCreate } = noteCreate; // whenever this fire offs it run useeffect again.
+  //so we use successCreate as dependency to useeffect as well.
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure?")) {
@@ -61,16 +72,26 @@ const MyNotes = () => {
     // fetchNotes();
     //call our action in note actions.
     dispatch(listNotes());
-  }, [dispatch]);
+    //check if there was nothing in the user info move user to login screen.
+    if (!userInfo) {
+      navigate("/");
+    }
+  }, [dispatch, successCreate, navigate, userInfo]);
+  //also this useeffect is dependant on navigate and useInfo as we see if useInfo changes it going to do naviagte.
 
   return (
-    <MainScreen title="Here you go, Jote it down right away.">
-      <Link nk to="creaWtenote">
+    <MainScreen title={`Here you go, Jot it down right away ${userInfo.name}`}>
+      <Link nk to="/createNote">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
           Create New Note
         </Button>
       </Link>
-      {notes?.map((note) => (
+      {/* wanna put something based on our redux state on line 46 we check if it
+      was loading or error we load other components */}
+      {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+      {loading && <Loading />}
+      {/* we use reverse to list it from newer to oldest notes. */}
+      {notes?.reverse().map((note) => (
         <Accordion key={note._id}>
           <Card style={{ margin: 10 }}>
             <Card.Header style={{ display: "flex" }}>
@@ -109,8 +130,10 @@ const MyNotes = () => {
                 <blockquote className="blockquote mb-0">
                   <p>{note.content}</p>
                   <footer className="blockquote-footer">
-                    Created on - date{" "}
-                    <cite title="Source Title">Source Title</cite>
+                    Created on -{" "}
+                    <cite title="Source Title">
+                      {note.createdAt.substring(0, 10)}
+                    </cite>
                   </footer>
                 </blockquote>
               </Card.Body>

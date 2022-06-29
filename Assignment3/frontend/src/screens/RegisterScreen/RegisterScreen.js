@@ -124,18 +124,18 @@ const RegisterScreen = (navigate) => {
           )}
 
           <Form.Group controlId="pic" className="mb-3">
-            <Form.Label htmlFor="pic">Profile Picture</Form.Label>
+            <Form.Label>Profile Picture</Form.Label>
             <Form.Control
-              id="pic"
               type="file"
               onChange={(e) => postDetails(e.target.files[0])}
+              id="custom-file"
               label="Upload Profile Picture"
               accept="image/jpeg"
               custom
             />
           </Form.Group>
 
-          <Button variant="outline-dark" type="submit">
+          <Button variant="primary" type="submit">
             Register
           </Button>
         </Form>

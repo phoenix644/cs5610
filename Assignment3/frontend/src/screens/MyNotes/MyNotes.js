@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
 
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { listNotes } from "../../actions/notesActions";
 
 function CustomToggle({ children, eventKey }) {
   const decoratedOnClick = useAccordionButton(eventKey, () =>
@@ -36,23 +38,30 @@ function CustomToggle({ children, eventKey }) {
 }
 
 const MyNotes = () => {
-  const [notes, setNotes] = useState([]);
+  const dispatch = useDispatch();
+
+  //useSelector Hook.
+  const noteList = useSelector((state) => state.noteList);
+  const { loading, notes, error } = noteList;
+  // const [notes, setNotes] = useState([]);
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure?")) {
     }
   };
 
-  const fetchNotes = async () => {
-    const { data } = await axios.get("/api/notes");
-    setNotes(data);
-  };
+  // const fetchNotes = async () => {
+  //   const { data } = await axios.get("/api/notes");
+  //   setNotes(data);
+  // };
 
   console.log(notes);
 
   useEffect(() => {
-    fetchNotes();
-  }, []);
+    // fetchNotes();
+    //call our action in note actions.
+    dispatch(listNotes());
+  }, [dispatch]);
 
   return (
     <MainScreen title="Here you go, Jote it down right away.">
@@ -61,7 +70,7 @@ const MyNotes = () => {
           Create New Note
         </Button>
       </Link>
-      {notes.map((note) => (
+      {notes?.map((note) => (
         <Accordion key={note._id}>
           <Card style={{ margin: 10 }}>
             <Card.Header style={{ display: "flex" }}>

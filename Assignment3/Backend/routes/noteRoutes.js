@@ -7,7 +7,13 @@ const {
   UpdateNote,
 } = require("../controllers/noteController");
 const { protect } = require("../middlewares/authMiddleware");
-
+// import {
+//   getNoteById,
+//   getNotes,
+//   CreateNote,
+//   DeleteNote,
+//   UpdateNote,
+// } from "../controllers/noteController.js";
 const router = express.Router();
 
 //we put this protect so user has to pass this protect to reach the getnotes api.

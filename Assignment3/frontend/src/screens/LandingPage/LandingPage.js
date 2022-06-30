@@ -238,7 +238,11 @@ const LandingPage = ({ navigate }) => {
             <p style={{ fontSize: "19px" }}>Check who is newly joined us</p>
             {users?.map((user) => (
               <Alert
-                style={{ fontSize: "15px", maxWidth: "300px" }}
+                style={{
+                  fontSize: "15px",
+                  maxWidth: "300px",
+                  color: "Black",
+                }}
                 key="warning"
                 variant="warning"
               >

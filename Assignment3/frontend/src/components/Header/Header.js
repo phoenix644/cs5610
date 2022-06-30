@@ -31,12 +31,12 @@ const Header = ({ setSearch }) => {
     <>
       {/* <MoveStuffAround /> */}
 
-      <Navbar bg="warning" expand="lg" variant="primary">
+      <Navbar bg="dark" expand="lg" variant="primary">
         <Container fluid>
           {/* <Navbar.Brand href="/">Jote it!</Navbar.Brand> */}
           <Navbar.Brand>
             <Link
-              style={{ color: "black", fontSize: "22px", fontweight: "bold" }}
+              style={{ color: "white", fontSize: "22px", fontWeight: "bold" }}
               to="/"
             >
               Jot it!
@@ -53,9 +53,8 @@ const Header = ({ setSearch }) => {
                 <Nav.Link href="/mynotes">
                   <Link
                     style={{
-                      color: "black",
+                      color: "white",
                       fontSize: "22px",
-                      fontweight: "bold",
                     }}
                     to="/mynotes"
                   >
@@ -64,10 +63,10 @@ const Header = ({ setSearch }) => {
                 </Nav.Link>
                 {/* this '?' is optional chaining means if it was not available show nothing */}
                 <NavDropdown
+                  variant="Warning"
                   style={{
-                    color: "black",
+                    color: "white",
                     fontSize: "22px",
-                    fontweight: "bold",
                   }}
                   title={userInfo?.name}
                   id="navbarScrollingDropdown"
@@ -95,7 +94,15 @@ const Header = ({ setSearch }) => {
                 navbarScroll
               >
                 <Nav.Link href="/login">
-                  <Link to="/login">Login</Link>
+                  <Link
+                    style={{
+                      color: "white",
+                      fontSize: "22px",
+                    }}
+                    to="/login"
+                  >
+                    Login
+                  </Link>
                 </Nav.Link>
               </nav>
             )}

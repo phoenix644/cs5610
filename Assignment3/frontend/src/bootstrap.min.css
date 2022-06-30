@@ -9379,7 +9379,7 @@ a.text-dark:hover {
   color: #222 !important;
 }
 .text-muted {
-  color: #999 !important;
+  color: #999;
 }
 .text-black-50 {
   color: rgba(0, 0, 0, 0.5) !important;

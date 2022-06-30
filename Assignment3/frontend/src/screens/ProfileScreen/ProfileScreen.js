@@ -139,7 +139,9 @@ const ProfileScreen = ({ location, navigate }) => {
                 <ErrorMessage variant="danger">{picMessage}</ErrorMessage>
               )}
               <Form.Group controlId="pic">
-                <Form.Label>Change Profile Picture</Form.Label>
+                <Form.Label htmlFor="custom-file">
+                  Change Profile Picture
+                </Form.Label>
                 <Form.Control
                   type="file"
                   onChange={(e) => postDetails2(e.target.files[0])}
@@ -149,7 +151,11 @@ const ProfileScreen = ({ location, navigate }) => {
                   custom
                 />
               </Form.Group>
-              <Button type="submit" varient="primary">
+              <Button
+                variant="outline-primary"
+                style={{ color: "black" }}
+                type="submit"
+              >
                 Update
               </Button>
             </Form>

@@ -124,11 +124,14 @@ const LandingPage = ({ navigate }) => {
     <div className="main">
       <Container>
         <Row>
-          <div className="intro-text">
+          <div className="intro-text2">
             <div>
-              <h1 className="title">Welcome to Jote it. </h1>
+              <h1 className="title">Welcome to Jot it. </h1>
               <p className="subtitle">Jot it Anywhere, as fast as possible.</p>
             </div>
+          </div>
+
+          <div className="intro-text">
             <div className="buttonContainer">
               <a href="/login">
                 <Button

@@ -41,7 +41,7 @@ function CreateNote({ history }) {
 
   return (
     <MainScreen title="Create a Note">
-      <Card>
+      <Card style={{ background: "Snow" }}>
         <Card.Header>Create a new Note</Card.Header>
         <Card.Body>
           <Form onSubmit={submitHandler}>
@@ -56,7 +56,7 @@ function CreateNote({ history }) {
               />
             </Form.Group>
 
-            <Form.Group controlId="content">
+            <Form.Group controlId="content1">
               <Form.Label>Content</Form.Label>
               <Form.Control
                 as="textarea"
@@ -75,7 +75,7 @@ function CreateNote({ history }) {
               </Card>
             )}
 
-            <Form.Group controlId="content">
+            <Form.Group controlId="content2">
               <Form.Label>Category</Form.Label>
               <Form.Control
                 type="content"
@@ -85,16 +85,31 @@ function CreateNote({ history }) {
               />
             </Form.Group>
             {loading && <Loading size={50} />}
-            <Button type="submit" variant="primary">
+            <Button
+              variant="outline-primary"
+              style={{ color: "black" }}
+              type="submit"
+            >
               Create Note
             </Button>
-            <Button className="mx-2" onClick={resetHandler} variant="danger">
+            <Button
+              className="mx-2"
+              onClick={resetHandler}
+              variant="outline-danger"
+              style={{ color: "black" }}
+            >
               Reset Feilds
             </Button>
           </Form>
         </Card.Body>
 
-        <Card.Footer className="text-muted">
+        <Card.Footer
+          style={{
+            color: "black",
+            background: "white",
+          }}
+          className="text-muted"
+        >
           Creating on - {new Date().toLocaleDateString()}
         </Card.Footer>
       </Card>

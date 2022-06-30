@@ -135,7 +135,13 @@ function SingleNote({ match, navigate }) {
           </Form>
         </Card.Body>
 
-        <Card.Footer className="text-muted">
+        <Card.Footer
+          style={{
+            color: "black",
+            background: "white",
+          }}
+          className="text-muted"
+        >
           Updated on - {date.substring(0, 10)}
         </Card.Footer>
       </Card>

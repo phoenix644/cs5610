@@ -135,7 +135,11 @@ const RegisterScreen = (navigate) => {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button
+            variant="outline-primary"
+            style={{ color: "black" }}
+            type="submit"
+          >
             Register
           </Button>
         </Form>

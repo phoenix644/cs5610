@@ -130,7 +130,7 @@ const MyNotes = ({ search }) => {
         .map((note) => (
           <Accordion key={note._id}>
             <Card style={{ margin: 10 }}>
-              <Card.Header style={{ display: "flex" }}>
+              <Card.Header style={{ background: "Snow", display: "flex" }}>
                 {/* <span
                 style={{
                   color: "black",

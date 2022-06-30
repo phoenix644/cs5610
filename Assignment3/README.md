@@ -1,11 +1,11 @@
 # cs5610
-## Iteration1
+## Iteration 1
 
-This Iteration is consisting of frontend, using React DOM Router, bootstrap and mongoDB and backend using nodejs and express as you can see, 
+This Iteration is consisting of front-end, using React DOM Router, bootstrap and mongoDB and back-end using nodejs and express as you can see, 
 and at the end, i installed axios and mongoose to create the connection to the DB, 
 but at this step i am not fetching data from DB, as currently i am getting data from note.js file. 
 
-### to run the frontend and backend please use following command:
+### to run the front-end and back-end please use following command:
 
 npm run dev
 
@@ -33,7 +33,7 @@ this page is responsive right now.
 which the notes are fetching from this path :"/api/notes" from backend .
 also you can get accesss directly using following URL: https://jote-it3.herokuapp.com/api/notes
 
-## Iteration2
+## Iteration 2
 
 in the following of the last iteration i continue developing my web application by adding these features:
 * Login/Logout
@@ -68,9 +68,9 @@ in the following of the last iteration i continue developing my web application 
 
 ![](screenshots/createuser.jpg)
 
-## Iteration3
+## Iteration 3
 
-in this final Iteration my App got comppleted.
+in this final Iteration my App got completed.
 following features added :
 
 * Fetching notes.
@@ -83,5 +83,19 @@ following features added :
 * Searching.
 * Profile Page.
 * Update UserProfile.
-* showing list of users API in back-end.
+* showing list of users API in back-end using : /api/users/newmember
+
+the output of the this Iteration has shown as followings, 
+also to manipulate the state i am using Redux as it has shown in screenshots.
+
+
+![](screenshots/Mynotes.jpg)
+![](screenshots/createNote.jpg)
+![](screenshots/Profile.jpg)
+![](screenshots/EditNote.jpg)
+![](screenshots/redux.jpg)
+
+as you can see all pages has accessibility validation with a score of 100.
+
+
 

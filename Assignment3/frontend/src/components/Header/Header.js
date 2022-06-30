@@ -1,4 +1,5 @@
 import React from "react";
+import Ticker from "react-ticker";
 import {
   Button,
   Container,
@@ -10,6 +11,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../actions/userActions";
+import MoveStuffAround from "../Ticker";
+// import ScrollTicker from "../ScrollTicker";
 //we receive this setsearch here.
 const Header = ({ setSearch }) => {
   const navigate = useNavigate();
@@ -26,6 +29,8 @@ const Header = ({ setSearch }) => {
 
   return (
     <>
+      {/* <MoveStuffAround /> */}
+
       <Navbar bg="dark" expand="lg" variant="dark">
         <Container fluid>
           {/* <Navbar.Brand href="/">Jote it!</Navbar.Brand> */}
@@ -80,7 +85,6 @@ const Header = ({ setSearch }) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
       <Navbar>
         <Container fluid>
           <Navbar.Brand href="#">||</Navbar.Brand>
@@ -102,6 +106,7 @@ const Header = ({ setSearch }) => {
                   aria-label="Search"
                   onChange={(e) => setSearch(e.target.value)}
                 />
+
                 <Button variant="outline-dark">Search</Button>
               </Form>
             </Nav>

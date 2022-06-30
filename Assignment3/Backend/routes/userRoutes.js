@@ -13,5 +13,5 @@ router.route("/login").post(authUser);
 //protect is for only authorized user can update the profile.
 router.route("/profile").post(protect, updateUserProfile);
 
-router.route("/newmember/:date").get(getUsers);
+router.route("/newmember").get(getUsers);
 module.exports = router;

@@ -81,7 +81,7 @@ const MyNotes = ({ search }) => {
   //   setNotes(data);
   // };
 
-  console.log(notes);
+  //console.log(notes);
 
   useEffect(() => {
     // fetchNotes();

@@ -1,5 +1,5 @@
 import React from "react";
-import Ticker from "react-ticker";
+
 import {
   Button,
   Container,
@@ -31,12 +31,15 @@ const Header = ({ setSearch }) => {
     <>
       {/* <MoveStuffAround /> */}
 
-      <Navbar bg="dark" expand="lg" variant="dark">
+      <Navbar bg="warning" expand="lg" variant="primary">
         <Container fluid>
           {/* <Navbar.Brand href="/">Jote it!</Navbar.Brand> */}
           <Navbar.Brand>
-            <Link style={{ color: "white" }} to="/">
-              Jote it!
+            <Link
+              style={{ color: "black", fontSize: "22px", fontweight: "bold" }}
+              to="/"
+            >
+              Jot it!
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -48,10 +51,24 @@ const Header = ({ setSearch }) => {
                 navbarScroll
               >
                 <Nav.Link href="/mynotes">
-                  <Link to="/mynotes">My notes</Link>
+                  <Link
+                    style={{
+                      color: "black",
+                      fontSize: "22px",
+                      fontweight: "bold",
+                    }}
+                    to="/mynotes"
+                  >
+                    My notes
+                  </Link>
                 </Nav.Link>
                 {/* this '?' is optional chaining means if it was not available show nothing */}
                 <NavDropdown
+                  style={{
+                    color: "black",
+                    fontSize: "22px",
+                    fontweight: "bold",
+                  }}
                   title={userInfo?.name}
                   id="navbarScrollingDropdown"
                 >
@@ -88,8 +105,8 @@ const Header = ({ setSearch }) => {
       <Navbar>
         <Container fluid>
           <Navbar.Brand href="#">||</Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Toggle aria-controls="navbarScroll2" />
+          <Navbar.Collapse id="navbarScroll2">
             <Nav
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}

@@ -88,7 +88,7 @@ function SingleNote({ match, navigate }) {
               />
             </Form.Group>
 
-            <Form.Group controlId="content">
+            <Form.Group controlId="content1">
               <Form.Label>Content</Form.Label>
               <Form.Control
                 as="textarea"
@@ -107,7 +107,7 @@ function SingleNote({ match, navigate }) {
               </Card>
             )}
 
-            <Form.Group controlId="content">
+            <Form.Group controlId="content2">
               <Form.Label>Category</Form.Label>
               <Form.Control
                 type="content"
@@ -117,12 +117,17 @@ function SingleNote({ match, navigate }) {
               />
             </Form.Group>
             {loading && <Loading size={50} />}
-            <Button variant="primary" type="submit">
+            <Button
+              variant="outline-primary"
+              style={{ color: "black" }}
+              type="submit"
+            >
               Update Note
             </Button>
             <Button
               className="mx-2"
-              variant="danger"
+              variant="outline-danger"
+              style={{ color: "black" }}
               onClick={() => deleteHandler(match.params.id)}
             >
               Delete Note

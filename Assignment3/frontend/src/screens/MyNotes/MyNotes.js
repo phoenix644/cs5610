@@ -105,7 +105,11 @@ const MyNotes = ({ search }) => {
   return (
     <MainScreen title={`Here you go, Jot it down right away ${userInfo.name}`}>
       <Link nk to="/createNote">
-        <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
+        <Button
+          variant="outline-warning"
+          style={{ marginLeft: 10, marginBottom: 6, color: "black" }}
+          size="lg"
+        >
           Create New Note
         </Button>
       </Link>
@@ -143,9 +147,12 @@ const MyNotes = ({ search }) => {
                 </Accordion.Item> */}
                 {/* </span> */}
                 <div>
-                  <Button href={`/note/${note._id}`}>Edit</Button>
+                  <Button variant="secondary" href={`/note/${note._id}`}>
+                    Edit
+                  </Button>
                   <Button
-                    variant="danger"
+                    variant="outline-danger"
+                    style={{ color: "black" }}
                     className="mx-2"
                     onClick={() => deleteHandler(note._id)}
                   >

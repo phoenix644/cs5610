@@ -35,7 +35,7 @@ also you can get accesss directly using following URL: https://jote-it3.herokuap
 
 ## Iteration2
 
-in the following of the last itteration i continue developing my web application by adding these features:
+in the following of the last iteration i continue developing my web application by adding these features:
 * Login/Logout
     Login page, add encryption
     add user model.
@@ -67,3 +67,21 @@ in the following of the last itteration i continue developing my web application
 ![](screenshots/redux.jpg)
 
 ![](screenshots/createuser.jpg)
+
+## Iteration3
+
+in this final Iteration my App got comppleted.
+following features added :
+
+* Fetching notes.
+
+* Create notes.
+* showing note using react-markdown.
+
+* Update and delete Notes.
+* Delete Notes.
+* Searching.
+* Profile Page.
+* Update UserProfile.
+* showing list of users API in back-end.
+

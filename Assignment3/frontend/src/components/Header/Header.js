@@ -10,7 +10,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../actions/userActions";
-const Header = () => {
+//we receive this setsearch here.
+const Header = ({ setSearch }) => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -35,32 +36,47 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="ml-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link href="/mynotes">
-                <Link to="/mynotes">My notes</Link>
-              </Nav.Link>
-              <NavDropdown
-                title="Name of the user"
-                id="navbarScrollingDropdown"
+            {userInfo ? (
+              <Nav
+                className="ml-auto my-2 my-lg-0"
+                style={{ maxHeight: "100px" }}
+                navbarScroll
               >
-                <NavDropdown.Item href="#action3">My profile</NavDropdown.Item>
-
-                <NavDropdown.Divider />
-                <NavDropdown.Item
-                  // onClick={() => {
-                  //   localStorage.removeItem("userInfo");
-                  //   navigate("/");
-                  // }}
-                  onClick={logoutHandler}
+                <Nav.Link href="/mynotes">
+                  <Link to="/mynotes">My notes</Link>
+                </Nav.Link>
+                {/* this '?' is optional chaining means if it was not available show nothing */}
+                <NavDropdown
+                  title={userInfo?.name}
+                  id="navbarScrollingDropdown"
                 >
-                  Log out
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
+                  <NavDropdown.Item href="/profile">
+                    My profile
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item
+                    // onClick={() => {
+                    //   localStorage.removeItem("userInfo");
+                    //   navigate("/");
+                    // }}
+                    onClick={logoutHandler}
+                  >
+                    Log out
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            ) : (
+              <nav
+                className="ml-auto my-2 my-lg-0"
+                style={{ maxHeight: "100px", color: "white" }}
+                navbarScroll
+              >
+                <Nav.Link href="/login">
+                  <Link to="/login">Login</Link>
+                </Nav.Link>
+              </nav>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -84,6 +100,7 @@ const Header = () => {
                   placeholder="Search"
                   className="me-2"
                   aria-label="Search"
+                  onChange={(e) => setSearch(e.target.value)}
                 />
                 <Button variant="outline-dark">Search</Button>
               </Form>

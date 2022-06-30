@@ -79,6 +79,7 @@ export const register = (name, email, password, pic) => async (dispatch) => {
   }
 };
 
+//this user will going to be an object, contains all the user parameters.
 export const updateProfile = (user) => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_UPDATE_REQUEST });

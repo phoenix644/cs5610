@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteNoteAction, listNotes } from "../../actions/notesActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import ReactMarkdown from "react-markdown";
 
 function CustomToggle({ children, eventKey }) {
   const decoratedOnClick = useAccordionButton(eventKey, () =>
@@ -39,7 +40,9 @@ function CustomToggle({ children, eventKey }) {
   );
 }
 
-const MyNotes = () => {
+//receive the search from states in app which was updated by header using setsearch.
+
+const MyNotes = ({ search }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -115,11 +118,16 @@ const MyNotes = () => {
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
       {loading && <Loading />}
       {/* we use reverse to list it from newer to oldest notes. */}
-      {notes?.reverse().map((note) => (
-        <Accordion key={note._id}>
-          <Card style={{ margin: 10 }}>
-            <Card.Header style={{ display: "flex" }}>
-              {/* <span
+      {notes
+        ?.reverse()
+        .filter((filteredNote) =>
+          filteredNote.title.toLowerCase().includes(search.toLowerCase())
+        )
+        .map((note) => (
+          <Accordion key={note._id}>
+            <Card style={{ margin: 10 }}>
+              <Card.Header style={{ display: "flex" }}>
+                {/* <span
                 style={{
                   color: "black",
                   textDecoration: "none",
@@ -129,42 +137,44 @@ const MyNotes = () => {
                   fontSize: 18,
                 }}
               > */}
-              <CustomToggle eventKey={note._id}>{note.title}</CustomToggle>
-              {/* <Accordion.Item as={Card.Text} variant="link" eventKey="0">
+                <CustomToggle eventKey={note._id}>{note.title}</CustomToggle>
+                {/* <Accordion.Item as={Card.Text} variant="link" eventKey="0">
                   {note.title}
                 </Accordion.Item> */}
-              {/* </span> */}
-              <div>
-                <Button href={`/note/${note._id}`}>Edit</Button>
-                <Button
-                  variant="danger"
-                  className="mx-2"
-                  onClick={() => deleteHandler(note._id)}
-                >
-                  Delete
-                </Button>
-              </div>
-            </Card.Header>
-            <Accordion.Collapse eventKey={note._id}>
-              <Card.Body>
-                <h4>
-                  <Badge variant="success">Category- {note.category}</Badge>
-                </h4>
+                {/* </span> */}
+                <div>
+                  <Button href={`/note/${note._id}`}>Edit</Button>
+                  <Button
+                    variant="danger"
+                    className="mx-2"
+                    onClick={() => deleteHandler(note._id)}
+                  >
+                    Delete
+                  </Button>
+                </div>
+              </Card.Header>
+              <Accordion.Collapse eventKey={note._id}>
+                <Card.Body>
+                  <h4>
+                    <Badge variant="success">Category- {note.category}</Badge>
+                  </h4>
 
-                <blockquote className="blockquote mb-0">
-                  <p>{note.content}</p>
-                  <footer className="blockquote-footer">
-                    Created on -{" "}
-                    <cite title="Source Title">
-                      {note.createdAt.substring(0, 10)}
-                    </cite>
-                  </footer>
-                </blockquote>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion>
-      ))}
+                  <blockquote className="blockquote mb-0">
+                    <p>
+                      <ReactMarkdown>{note.content}</ReactMarkdown>
+                    </p>
+                    <footer className="blockquote-footer">
+                      Created on -{" "}
+                      <cite title="Source Title">
+                        {note.createdAt.substring(0, 10)}
+                      </cite>
+                    </footer>
+                  </blockquote>
+                </Card.Body>
+              </Accordion.Collapse>
+            </Card>
+          </Accordion>
+        ))}
     </MainScreen>
   );
 };

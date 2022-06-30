@@ -8,24 +8,33 @@ import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import CreateNote from "./screens/CreateNote/CreateNote";
 import SingleNote from "./screens/SingleNote/SingleNote";
+import { useState } from "react";
+import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
 
-const App = () => (
-  <BrowserRouter>
-    <Header />
-    <main>
-      <Routes>
-        <Route path="/" element={<LandingPage />} exact />
-        <Route path="/login" element={<LoginScreen />} exact />
-        <Route path="/register" element={<RegisterScreen />} exact />
-        <Route path="/createNote" element={<CreateNote />} exact />
-        <Route path="/note/:id" element={<SingleNote />} exact />
-        <Route path="/mynotes" element={<MyNotes />} />
-        {/* <Route path="/mynotes" component={() => <MyNotes />} /> */}
-      </Routes>
-    </main>
-    <Footer />
-  </BrowserRouter>
-);
+const App = () => {
+  const [search, setSearch] = useState("");
+
+  return (
+    <BrowserRouter>
+      {/* we will set this search inside the header. */}
+      <Header setSearch={setSearch} />
+      <main>
+        <Routes>
+          <Route path="/" element={<LandingPage />} exact />
+          <Route path="/login" element={<LoginScreen />} exact />
+          <Route path="/profile" element={<ProfileScreen />} exact />
+          <Route path="/register" element={<RegisterScreen />} exact />
+          <Route path="/createNote" element={<CreateNote />} exact />
+          <Route path="/note/:id" element={<SingleNote />} exact />
+          {/* we will pass search to mynotes too. */}
+          <Route path="/mynotes" element={<MyNotes search={search} />} />
+          {/* <Route path="/mynotes" component={() => <MyNotes />} /> */}
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  );
+};
 
 // function App() {
 //   return <div className="App">Hello</div>;

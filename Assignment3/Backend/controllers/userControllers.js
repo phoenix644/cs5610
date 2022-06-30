@@ -86,7 +86,7 @@ const getUsers = asyncHandler(async (req, res) => {
       //   $lt: new Date(2022, 06, 19),
       // },
     },
-    { name: 1, _id: 0 }
+    { name: 1, pic: 1, _id: 0 }
   )
     .sort({ createdAt: -1 })
     .limit(5);

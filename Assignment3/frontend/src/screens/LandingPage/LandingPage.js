@@ -246,7 +246,7 @@ const LandingPage = ({ navigate }) => {
                 key="warning"
                 variant="warning"
               >
-                {user.name} Became our new member.
+                {user.name} has become our new member.
               </Alert>
             ))}
           </div>

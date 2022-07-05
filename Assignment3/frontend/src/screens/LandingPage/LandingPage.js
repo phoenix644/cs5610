@@ -202,7 +202,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Alert, Button, Carousel, Col, Container, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 import Ticker from "react-ticker";
 import axios from "axios";
@@ -252,7 +252,8 @@ const LandingPage = ({ navigate }) => {
           </div>
           <div className="intro-text">
             <div className="buttonContainer">
-              <a href="/login">
+              {/* <a href="/login"> */}
+              <Link to="login">
                 <Button
                   variant="outline-dark"
                   size="lg"
@@ -260,8 +261,11 @@ const LandingPage = ({ navigate }) => {
                 >
                   Login
                 </Button>
-              </a>
-              <a href="/register">
+              </Link>
+
+              {/* </a> */}
+              {/* <a href="/register"> */}
+              <Link to="register">
                 <Button
                   bg="dark"
                   variant="outline-dark"
@@ -270,7 +274,8 @@ const LandingPage = ({ navigate }) => {
                 >
                   Signup
                 </Button>
-              </a>
+              </Link>
+              {/* </a> */}
             </div>
           </div>
         </Row>
